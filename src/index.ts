@@ -58,6 +58,7 @@ const UseReactTabTrap = <T extends HTMLElement>({
                     if(id > -1) {
                         focusables[id-1].focus();
                     }
+                    e.preventDefault(); 
                 }
             } else if (e.key === 'Tab') {
                 if(document.activeElement === focusables[focusables.length - 1]) {
@@ -73,6 +74,7 @@ const UseReactTabTrap = <T extends HTMLElement>({
                     if(id > -1) {
                         focusables[id+1].focus();
                     }
+                    e.preventDefault();
                 }
             } else if (e.key === 'ArrowDown') {
                 // if focus is on the last element on arrowDown
