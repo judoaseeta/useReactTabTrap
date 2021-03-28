@@ -26,7 +26,7 @@
     ....
     */
    <div
-    ref={ref}å
+    ref={ref}
    >
    </div>
 ```
