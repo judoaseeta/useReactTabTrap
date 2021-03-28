@@ -1,4 +1,6 @@
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from "@rollup/plugin-commonjs";
 import { uglify } from 'rollup-plugin-uglify';
 export default {
@@ -8,7 +10,7 @@ export default {
     ],
     output: {
         file: './build/build.js',
-        format: 'iife',
+        format: 'esm',
         sourcemap: true,
         name: 'useReactTabTrap',
         globals: {
@@ -16,6 +18,8 @@ export default {
         }
     },
     plugins: [
+        peerDepsExternal(),
+        nodeResolve(),
         commonjs(),
         typescript({
             tsconfig: './tsconfig.json',
