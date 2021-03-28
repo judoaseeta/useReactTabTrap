@@ -31,12 +31,11 @@ const UseReactTabTrap = <T extends HTMLElement>({
         ref,
         trigger
     ]);
-    const onKeyDown:KeyboardEventHandler<T> = useCallback((e) => {
+    const onKeyDown = useCallback((e: KeyboardEvent) => {
         const target = ref.current;
         // if DOM is rendered and trigger is true
         // start to listen keyDown event
-        if( target && trigger) {
-            const focusables = target.querySelectorAll<HTMLElement>(focusable);
+        if( target && trigger && focusables) {
             // if key is 'Esc' on Window
             // or key is 'Escape' on Mac
             if(e.key === 'Esc' || e.key === 'Escape') {
@@ -103,12 +102,17 @@ const UseReactTabTrap = <T extends HTMLElement>({
         cleanUp,
         trigger,
         ref,
+        focusables
     ]);
     // useEffect for focusing first elements 
     // when triggered
     useEffect(() => {
+        window.addEventListener('keydown',onKeyDown);
         if(trigger && focusables) {
             focusables[0].focus();
+        }
+        return () => {
+            window.removeEventListener('keydown',onKeyDown);
         }
     },[
         trigger,

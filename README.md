@@ -2,7 +2,7 @@
 
 ## React hook for adding Tab-trapping functionality.
     use-react-tabtrap will give a React Component Tab-trapping functionality by
-    adding 'keydown' listener on the component. 
+    adding 'keydown' listener window. 
 ### Props 
 ```tsx
     {
@@ -17,7 +17,7 @@
 ### Usage
     create a React.MutableRefObject by useRef. and give the ref to both the target component and prop of use-react-tabtrap hook.
 ``` tsx
-    const onTabTrap = UseReactTabTrap({
+    UseReactTabTrap({
         ref,
         trigger,
         cleanUp,
@@ -26,8 +26,7 @@
     ....
     */
    <div
-    ref={ref}
-    onKeyDown={onTabTrap}
+    ref={ref}å
    >
    </div>
 ```

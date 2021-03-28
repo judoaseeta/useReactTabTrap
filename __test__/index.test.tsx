@@ -30,21 +30,21 @@ describe('Testing use-react-tabtrap', () => {
         const modalOn = getByTestId('onModal');
         fireEvent.click(modalOn);
         const focusables = modal.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]');
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'Tab'
         });
         expect(focusables[1]).toHaveFocus();
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'Tab'
         });
         expect(focusables[2]).toHaveFocus();;
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'Tab'
         });
         expect(focusables[3]).toHaveFocus();
         
         // fire keydown with focused on the last focusable element.
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'Tab'
         });
         // focus should return to the first element.
@@ -58,21 +58,21 @@ describe('Testing use-react-tabtrap', () => {
         const modalOn = getByTestId('onModal');
         fireEvent.click(modalOn);
         const focusables = modal.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]');
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'ArrowDown'
         });
         expect(focusables[1]).toHaveFocus();
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'ArrowDown'
         });
         expect(focusables[2]).toHaveFocus();;
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'ArrowDown'
         });
         expect(focusables[3]).toHaveFocus();
         
         // fire keydown with focused on the last focusable element.
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'ArrowDown'
         });
         // focus should return to the first element.
@@ -89,18 +89,18 @@ describe('Testing use-react-tabtrap', () => {
         const focusables = modal.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]');
         // initial render, the first element should be focused
         expect(focusables[0]).toHaveFocus();
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'ArrowUp'
         });
         // ArrowUp focus the element reversely, 
         // should focus the last element.
         expect(focusables[focusables.length -1]).toHaveFocus();
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'ArrowUp'
         });
         // should focus the second last element
         expect(focusables[focusables.length -2]).toHaveFocus();
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'ArrowUp'
         });
         // should focuse the third last element
@@ -116,20 +116,20 @@ describe('Testing use-react-tabtrap', () => {
         const focusables = modal.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]');
         // initial render, the first element should be focused
         expect(focusables[0]).toHaveFocus();
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'Tab',
             shiftKey: true
         });
         // Shift+tab focus the element reversely, 
         // should focus the last element.
         expect(focusables[focusables.length -1]).toHaveFocus();
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'Tab',
             shiftKey: true
         });
         // should focus the second last element
         expect(focusables[focusables.length -2]).toHaveFocus();
-        fireEvent.keyDown(modal,{
+        fireEvent.keyDown(window,{
             key: 'Tab',
             shiftKey: true
         });
@@ -144,7 +144,7 @@ describe('Testing use-react-tabtrap', () => {
         const modal = getByTestId('modal');
         const modalOn = getByTestId('onModal');
         // press 'Esc' 
-        fireEvent.keyDown(modal, {
+        fireEvent.keyDown(window, {
             key: 'Esc'
         });
         // mock CleanUp should not be called because trigger is false yet.
@@ -152,7 +152,7 @@ describe('Testing use-react-tabtrap', () => {
         // click OnModal button to trigger modal
         fireEvent.click(modalOn);
         // press 'Esc' again
-        fireEvent.keyDown(modal, {
+        fireEvent.keyDown(window, {
             key: 'Esc'
         });
         // this time mockCleanUp should be called trigger is true.

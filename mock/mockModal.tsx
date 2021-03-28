@@ -9,7 +9,7 @@ const MockModal:React.FC<{
 }) => {
     const ref = React.useRef<HTMLFormElement|null>(null);
     const [ trigger, setTrigger ] = useState(initialTrigger);
-    const onTabTrap = UseReactTabTrap<HTMLFormElement>({
+    UseReactTabTrap<HTMLFormElement>({
         trigger,
         ref,
         cleanUp :  cleanUp? cleanUp : () => ({})
@@ -29,7 +29,6 @@ const MockModal:React.FC<{
                 top: 0,
                 left: 0
             }}
-            onKeyDown={onTabTrap}
         >
             <input />
             <button
