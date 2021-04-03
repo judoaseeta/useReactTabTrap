@@ -5,7 +5,6 @@ import {
     render,
     fireEvent,
 } from '@testing-library/react';
-import { notDeepEqual } from 'node:assert';
 
 describe('Testing use-react-tabtrap', () => {
     it('should focus the first focusable element when trigger is true', () => {
@@ -141,7 +140,6 @@ describe('Testing use-react-tabtrap', () => {
         const { getByTestId } = render(<MockModal   
             cleanUp={mockCleanUp}   
         />);
-        const modal = getByTestId('modal');
         const modalOn = getByTestId('onModal');
         // press 'Esc' 
         fireEvent.keyDown(window, {
@@ -158,4 +156,55 @@ describe('Testing use-react-tabtrap', () => {
         // this time mockCleanUp should be called trigger is true.
         expect(mockCleanUp).toHaveBeenCalled();
     });
+    it('should focus the last index of focused element again when tab again',() => {
+        const { getByTestId } = render(<MockModal />);
+        const modal = getByTestId('modal');
+        // toggle modal to on.
+        const modalOn = getByTestId('onModal');
+        fireEvent.click(modalOn);
+        const focusables = modal.querySelectorAll<HTMLElement>('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]');
+        fireEvent.keyDown(window,{
+            key: 'Tab',
+        });
+        fireEvent.keyDown(window,{
+            key: 'Tab',
+        });
+        expect(focusables[2]).toHaveFocus();
+        // focus body and blur the first focusable on the modal.
+        focusables[2].blur();
+        document.body.focus();
+        // when press tab
+        fireEvent.keyDown(window,{
+            key: 'Tab',
+        });
+        // should focus the last index of focused element
+        expect(focusables[2]).toHaveFocus();
+    });;
+    it('should focus the last index of focused element again when shift + tab again',() => {
+        const { getByTestId } = render(<MockModal />);
+        const modal = getByTestId('modal');
+        // toggle modal to on.
+        const modalOn = getByTestId('onModal');
+        fireEvent.click(modalOn);
+        const focusables = modal.querySelectorAll<HTMLElement>('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]');
+        fireEvent.keyDown(window,{
+            key: 'Tab',
+            shiftKey: true
+        });
+        fireEvent.keyDown(window,{
+            key: 'Tab',
+            shiftKey: true
+        });
+        expect(focusables[focusables.length - 2]).toHaveFocus();
+        // focus body and blur the first focusable on the modal.
+        focusables[focusables.length - 2].blur();
+        document.body.focus();
+        // when press tab
+        fireEvent.keyDown(window,{
+            key: 'Tab',
+            shiftKey: true
+        });
+        // should focus the last index of focused element
+        expect(focusables[focusables.length - 2]).toHaveFocus();
+    });;
 });
