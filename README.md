@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/judoaseeta/useReactTabTrap.svg?branch=main)](https://travis-ci.com/judoaseeta/useReactTabTrap)
+[![Coverage Status](https://coveralls.io/repos/github/judoaseeta/useReactTabTrap/badge.svg?branch=main)](https://coveralls.io/github/judoaseeta/useReactTabTrap?branch=main)
 # use-react-tabtrap
     Make a tab-trapping component easily.
 
