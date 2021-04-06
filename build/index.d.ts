@@ -5,5 +5,5 @@ interface UseReactTabTrapProps<T extends HTMLElement> {
     trigger: boolean;
     ref: MutableRefObject<T | null>;
 }
-declare const UseReactTabTrap: <T extends HTMLElement>({ cleanUp, focusable, trigger, ref }: UseReactTabTrapProps<T>) => (e: KeyboardEvent) => void;
+declare const UseReactTabTrap: <T extends HTMLElement>({ cleanUp, focusable, trigger, ref }: UseReactTabTrapProps<T>) => void;
 export default UseReactTabTrap;
