@@ -41,11 +41,9 @@
 
 - ArrowDown or ArrowUp : will focus the next or the previous focusable elements
 
-<<<<<<< HEAD
 #### Fix logs
 - Version 1.0.9 : change module to common js not to make error on production build.
 
->>>>>>> parent of 5dd1ea8... FIX lose focus
 #### Coming up next
 - some more keys will be added
 - a custom key map could be available.
