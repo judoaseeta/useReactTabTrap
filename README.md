@@ -44,7 +44,7 @@
 <<<<<<< HEAD
 #### Fix logs
 - Version 1.0.5: use-react-tabtrap now can focus again the last focused element, when a user presses one of supported keys again in the situation tab-trapped component loses focus.
-- Version 1.0.6: Support lower version of react(>=16.13.0)
+- Version 1.0.6: Support lower version of react(>=16.13.0), fix production build problem
 =======
 
 >>>>>>> parent of 5dd1ea8... FIX lose focus

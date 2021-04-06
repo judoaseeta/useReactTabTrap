@@ -5,7 +5,6 @@ import {
     render,
     fireEvent,
 } from '@testing-library/react';
-import { notDeepEqual } from 'node:assert';
 
 describe('Testing use-react-tabtrap', () => {
     it('should focus the first focusable element when trigger is true', () => {

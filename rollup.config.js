@@ -10,12 +10,13 @@ export default {
     ],
     output: {
         file: './build/build.js',
-        format: 'esm',
+        format: 'cjs',
         sourcemap: true,
         name: 'useReactTabTrap',
         globals: {
             'react' : 'React'
-        }
+        },
+        exports: "default"
     },
     plugins: [
         peerDepsExternal(),

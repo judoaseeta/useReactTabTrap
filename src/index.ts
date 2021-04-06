@@ -3,7 +3,6 @@ import {
     useMemo,
     useEffect,
     MutableRefObject,
-    KeyboardEventHandler
 } from 'react';
 
 interface UseReactTabTrapProps<T extends HTMLElement> {
