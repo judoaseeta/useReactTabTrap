@@ -138,7 +138,6 @@ const UseReactTabTrap = <T extends HTMLElement>({
         trigger,
         focusables
     ]);
-    return onKeyDown;
 };  
 
 export default UseReactTabTrap;

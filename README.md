@@ -51,9 +51,9 @@
 
 - ArrowDown or ArrowUp : will focus the next or the previous focusable elements
 
-#### Version 1.0.5 fixed
-- use-react-tabtrap now can focus again the last focused element, when a user presses one of supported keys again in the situation tab-trapped component loses focus.
-
+#### Fix logs
+- Version 1.0.5: use-react-tabtrap now can focus again the last focused element, when a user presses one of supported keys again in the situation tab-trapped component loses focus.
+- Version 1.0.6: Support lower version of react(>=16.13.0)
 #### Coming up next
 
 - some more keys will be added
