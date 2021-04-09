@@ -17,7 +17,7 @@ const UseReactTabTrap = <T extends HTMLElement>({
     focusable = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]',
     trigger,
     ref
-}: UseReactTabTrapProps<T>) => {
+}: UseReactTabTrapProps<T>):void => {
     // 
     const focusables = useMemo(() => {
         const target = ref.current;

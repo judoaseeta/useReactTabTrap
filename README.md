@@ -42,7 +42,9 @@
 - ArrowDown or ArrowUp : will focus the next or the previous focusable elements
 
 #### Fix logs
-- Version 1.0.9 : change module to common js not to make error on production build.
+- Version 1.0.11 : change module to common js not to make error on production build.
+- Version 1.0.12 : remove unnecessary files.
+- Version 1.0.14 : supports commonjs/ESM all.
 
 #### Coming up next
 - some more keys will be added

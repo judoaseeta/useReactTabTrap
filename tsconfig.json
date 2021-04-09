@@ -1,20 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",                 
-    "module": "ES2015",                         
-    "lib": [
-      "ES2015",
-      "DOM"
-    ],                             
-    "jsx": "react",                     
-    "declaration": true,                      
-    "esModuleInterop": true,                       
-    "skipLibCheck": true,                           
-    "forceConsistentCasingInFileNames": true        
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
   },
   "exclude": [
-    "node_modules",
     "mock",
-    "**/*.test.tsx",
+    "__test__"
   ]
 }
