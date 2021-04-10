@@ -8,7 +8,7 @@
 ### Props 
 ```tsx
     {
-        cleanUp: () => void // 
+        cleanUp: () => void // function for toggling trigger such as on and off modal.
         ref: MutableObject<T extends HTMLElement | null>
         trigger: boolean //  a boolean value represents whether tabtrap needs
         focusable?: string // comma seperated string of querySelectorAll
@@ -35,7 +35,7 @@
 
 ### Supported key list
 
-- ESC or ESCAPE: will excute cleanUp function. cleanUp could be a function to toggle modal or focus on specific element 
+- ESC or ESCAPE: will excute cleanUp function. cleanUp could be a function to toggle modal or blur on specific element 
 
 - Tab or Shift+Tab : will focus the next or the previous focusable elements
 
@@ -45,7 +45,7 @@
 - Version 1.0.11 : change module to common js not to make error on production build.
 - Version 1.0.12 : remove unnecessary files.
 - Version 1.0.14 : supports commonjs/ESM all.
-
+- Version 1.0.15 : Now pressing Esc key fully works on Safari.
 #### Coming up next
 - some more keys will be added
 - a custom key map could be available.

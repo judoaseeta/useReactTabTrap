@@ -1,6 +1,6 @@
 {
   "name": "use-react-tabtrap",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "React hook for adding tab-trap functionality ",
   "main": "./build/usetabtrap.cjs.js",
   "module": "./build/usetabtrap.es.js",

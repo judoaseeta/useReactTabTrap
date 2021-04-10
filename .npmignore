@@ -1,1 +1,5 @@
 src/
+# Test related file
+mock/
+__test__/
+coverage/

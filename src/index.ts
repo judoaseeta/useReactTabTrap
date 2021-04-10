@@ -38,6 +38,8 @@ const UseReactTabTrap = <T extends HTMLElement>({
             // if key is 'Esc' on Window
             // or key is 'Escape' on Mac
             if(e.key === 'Esc' || e.key === 'Escape') {
+                // this line will prevent leaving full screen on Safari.
+                e.preventDefault();
                 // blur first focusables and
                 // invoke cleanUp function
                 focusables[0].blur();
